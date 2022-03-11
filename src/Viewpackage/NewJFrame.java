@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package projectguifwd;
+package Viewpackage;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,22 +21,23 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import projectguifwd.modelFwd.HeaderTabelModel;
-import projectguifwd.modelFwd.InvoiceHeader;
-import projectguifwd.modelFwd.InvoiceLine;
-import projectguifwd.modelFwd.LinesTabelModel;
+import Controllerpackage.HeaderTabelControl;
+import Modelpackage.InvoiceHeader;
+import Modelpackage.InvoiceLine;
+import Controllerpackage.LinesTabelControl;
 
 /**
  *
- * @author Win 10
+ * @author By Hossam Moahmmed AbdAlwahab 
+ * 22-02-2022
  */
 public class NewJFrame extends javax.swing.JFrame implements ActionListener, ListSelectionListener {
 
     private SimpleDateFormat df = new SimpleDateFormat("dd-mm-yyyy");
     private ArrayList<InvoiceHeader> invoices = new ArrayList<>();
     private ArrayList<InvoiceLine> invoiceLines = new ArrayList<>();
-    private HeaderTabelModel headerTabelModel;
-    private LinesTabelModel linesTabelModel;
+    private HeaderTabelControl headerTabelModel;
+    private LinesTabelControl linesTabelModel;
     private NewInvDialog newInvDialog;
     private NewInLineDialog newInLineDialog;
 
@@ -101,6 +102,9 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener, Lis
         headerTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(headerTable);
 
+        createNewInvoice.setBackground(new java.awt.Color(51, 51, 51));
+        createNewInvoice.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        createNewInvoice.setForeground(new java.awt.Color(0, 51, 255));
         createNewInvoice.setText("Create New Invoice");
         createNewInvoice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,6 +112,8 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener, Lis
             }
         });
 
+        jButton2.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 51, 255));
         jButton2.setText("Delete Invoice");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,6 +121,8 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener, Lis
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Arial Narrow", 2, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 255));
         jLabel1.setText("Invoices Table");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -128,10 +136,10 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener, Lis
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(141, 141, 141)
+                        .addGap(142, 142, 142)
                         .addComponent(createNewInvoice, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(70, 70, 70)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(48, 48, 48)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -145,22 +153,30 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener, Lis
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(createNewInvoice, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(createNewInvoice, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(114, Short.MAX_VALUE))
         );
 
+        jLabel2.setFont(new java.awt.Font("Arial Narrow", 2, 18)); // NOI18N
         jLabel2.setText("Invoice Number");
 
+        jLabel3.setFont(new java.awt.Font("Arial Narrow", 2, 18)); // NOI18N
         jLabel3.setText("Invoice Date");
 
+        jLabel4.setFont(new java.awt.Font("Arial Narrow", 2, 18)); // NOI18N
         jLabel4.setText("Customer Name");
 
+        jLabel6.setFont(new java.awt.Font("Arial Narrow", 2, 18)); // NOI18N
         jLabel6.setText("Invoice Total");
 
-        jLabel8.setText("jLabel8");
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(102, 153, 255));
+        jLabel8.setText("Invoice Line");
 
+        CreateNewItem.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        CreateNewItem.setForeground(new java.awt.Color(0, 51, 102));
         CreateNewItem.setText("Create Item");
         CreateNewItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,6 +184,8 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener, Lis
             }
         });
 
+        delItem.setFont(new java.awt.Font("Tahoma", 2, 14)); // NOI18N
+        delItem.setForeground(new java.awt.Color(0, 51, 102));
         delItem.setText("Del Item");
         delItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,8 +241,8 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener, Lis
                 .addGap(183, 183, 183)
                 .addComponent(CreateNewItem, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(delItem, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95))
+                .addComponent(delItem, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,7 +268,7 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener, Lis
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 347, Short.MAX_VALUE)
                         .addGap(185, 185, 185))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -312,7 +330,7 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener, Lis
 
     private void loadFileMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadFileMenuItemActionPerformed
 
-        System.out.println("Load File");
+       //to Load File
         try {
             loadfile();
         } catch (Exception ex) {
@@ -324,7 +342,8 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener, Lis
     private void loadfile() throws Exception {
         invoices.clear();
         invoiceLines.clear();
-        JOptionPane.showMessageDialog(this, "Please Select Inoice header file", "Invooice Header", JOptionPane.WARNING_MESSAGE);
+        //"Chocese Frist File" Header
+        JOptionPane.showMessageDialog(this, "Select Inoices header file", "Inv Header", JOptionPane.WARNING_MESSAGE);
         JFileChooser fc = new JFileChooser();
         int option = fc.showOpenDialog(this);
         File selectFile;
@@ -343,10 +362,10 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener, Lis
             }
             br.close();
             fr.close();
-            System.out.println("check header");
+            
         }
-        System.out.println("Chocese Second File");
-        JOptionPane.showMessageDialog(this, "Please Select Invoice Lines file", "Invooice Lines", JOptionPane.WARNING_MESSAGE);
+        //"Chocese Second File" Lines
+        JOptionPane.showMessageDialog(this, " Select Invoice Lines file", "Inv Lines", JOptionPane.WARNING_MESSAGE);
         option = fc.showOpenDialog(this);
         if (option == JFileChooser.APPROVE_OPTION) {
             selectFile = fc.getSelectedFile();
@@ -363,14 +382,13 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener, Lis
                 InvoiceLine Invline = new InvoiceLine(CustomerName, price, count, header);
                 header.addLine(Invline);
 
-                //InvoiceHeader header = new InvoiceHeader(invNum, invdate, custName);
-                //invoices.add(header);
+          
             }
             br.close();
             fr.close();
             System.out.println("check line");
-            headerTabelModel = new HeaderTabelModel(invoices);
-            headerTabelModel = new HeaderTabelModel(invoices);
+            headerTabelModel = new HeaderTabelControl(invoices);
+            headerTabelModel = new HeaderTabelControl(invoices);
             headerTable.setModel(headerTabelModel);
             headerTable.validate();
         }
@@ -485,7 +503,7 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener, Lis
             jLabel5.setText("" + rowselect.getNum());
             jLabel7.setText("" + rowselect.getInvTotal());
             ArrayList<InvoiceLine> lines = rowselect.getLines();
-            linesTabelModel = new LinesTabelModel(lines);
+            linesTabelModel = new LinesTabelControl(lines);
             LineTable.setModel(linesTabelModel);
             linesTabelModel.fireTableDataChanged();
         }
@@ -532,28 +550,9 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener, Lis
         InvoiceHeader headerNew = new InvoiceHeader(newNumber, invdate, customername);
         invoices.add(headerNew);
         headerTabelModel.fireTableDataChanged();
-        System.out.println("new inv add");
+        
     }
 
-    private void createOkItem() {
-        String itemNameS = newInLineDialog.getItemNameTF().getText();
-        String itemCountS = newInLineDialog.getItemCountTF().getText();
-        String itemPriceS = newInLineDialog.getItemPriceTF().getText();
-        int itemCount = Integer.parseInt(itemCountS);
-        double itemPrice = Double.parseDouble(itemPriceS);
-
-        newInLineDialog.setVisible(false);
-
-        int row = headerTable.getSelectedRow();
-        if (row >= 0) {
-            InvoiceHeader header = invoices.get(row);
-            InvoiceLine li = new InvoiceLine(itemNameS, itemPrice, itemCount, header);
-            header.addLine(li);
-
-            linesTabelModel.fireTableDataChanged();
-            headerTabelModel.fireTableDataChanged();
-        }
-    }
 
     private void createcancelInv() {
         newInvDialog.setVisible(false);
@@ -596,7 +595,7 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener, Lis
               // out.print(header.getNum());
               // out.print(header.getDate().toString());
               // out.println(header.getCusName());
-               out.printf("%d ,%s,%s",header.getNum(),header.getDate().toString(),header.getCusName());
+               out.printf("%d,%s,%s",header.getNum(),header.getDate().toString(),header.getCusName());
                out.println();
             }
            out.close();
@@ -631,5 +630,25 @@ public class NewJFrame extends javax.swing.JFrame implements ActionListener, Lis
         //headerTabelModel.fireTableDataChanged();
         linesTabelModel.fireTableDataChanged();
 
+    }
+    
+    private void createOkItem() {
+        String itemNameS = newInLineDialog.getItemNameTF().getText();
+        String itemCountS = newInLineDialog.getItemCountTF().getText();
+        String itemPriceS = newInLineDialog.getItemPriceTF().getText();
+        int itemCount = Integer.parseInt(itemCountS);
+        double itemPrice = Double.parseDouble(itemPriceS);
+
+        newInLineDialog.setVisible(false);
+
+        int row = headerTable.getSelectedRow();
+        if (row >= 0) {
+            InvoiceHeader header = invoices.get(row);
+            InvoiceLine li = new InvoiceLine(itemNameS, itemPrice, itemCount, header);
+            header.addLine(li);
+
+            linesTabelModel.fireTableDataChanged();
+            headerTabelModel.fireTableDataChanged();
+        }
     }
 }

@@ -1,15 +1,16 @@
-package projectguifwd.modelFwd;
+package Controllerpackage;
 
+import Modelpackage.InvoiceLine;
 import java.util.ArrayList;
 //import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 
-public class LinesTabelModel extends DefaultTableModel {
+public class LinesTabelControl extends DefaultTableModel {
 
     private String[] cloNames = {"Item Name", "Item Price", "Count", "Item Total"};
     private ArrayList<InvoiceLine> Lines;
 
-    public LinesTabelModel(ArrayList<InvoiceLine> Lines) {
+    public LinesTabelControl(ArrayList<InvoiceLine> Lines) {
         this.Lines = Lines;
     }
 

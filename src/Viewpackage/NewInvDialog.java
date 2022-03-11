@@ -1,5 +1,6 @@
-package projectguifwd;
+package Viewpackage;
 
+import Viewpackage.NewJFrame;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import javax.swing.JButton;

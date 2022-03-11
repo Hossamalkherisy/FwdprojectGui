@@ -1,4 +1,6 @@
-package projectguifwd.modelFwd;
+package Modelpackage;
+
+import Modelpackage.InvoiceHeader;
 
 public class InvoiceLine {
 

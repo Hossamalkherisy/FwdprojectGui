@@ -1,15 +1,15 @@
-package projectguifwd.modelFwd;
+package Controllerpackage;
 
+import Modelpackage.InvoiceHeader;
 import java.util.ArrayList;
-import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 
-public class HeaderTabelModel extends DefaultTableModel {
+public class HeaderTabelControl extends DefaultTableModel {
 
     private String[] cloNames = {"INV Num", "Customer Name", "Inv Date", "Total"};
     private ArrayList<InvoiceHeader> invoices;
 
-    public HeaderTabelModel(ArrayList<InvoiceHeader> invoices) {
+    public HeaderTabelControl(ArrayList<InvoiceHeader> invoices) {
         this.cloNames = cloNames;
         this.invoices = invoices;
     }

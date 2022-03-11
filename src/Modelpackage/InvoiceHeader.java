@@ -1,4 +1,4 @@
-package projectguifwd.modelFwd;
+package Modelpackage;
 
 import java.util.ArrayList;
 import java.util.Date;
